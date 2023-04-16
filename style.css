@@ -1,0 +1,198 @@
+body {
+  background-color: #F9F9F9;
+}
+
+#MainBodyDiv{
+  display: none;
+}
+
+.codee {
+  background-color: #333333; 
+  color: white; 
+  padding: 15px; 
+  border-radius: 10px; 
+  font-family: Fira Code, monospace;
+}
+
+.chatify-send-btn {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.chatify-send-btn:hover {background-color: #3e8e41}
+
+.chatify-send-btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.w80p {
+  width: 80%;
+}
+
+.c-flexcontainer {
+  display: flex;
+  width: 90%;
+  height: 0%;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5%;
+  right: 7%;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.awidth {
+  width: 100px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #dddddd;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #6edc5f;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.centerthis {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+
+.chatify-dark-body {
+  background-color: #1b232f;
+  color: white !important;
+  transition: .2s ease-in-out;
+}
+
+.chatify-lightnav {
+  background-color: #E1E1E1;
+  transition: .2s ease-in-out;
+}
+
+.chatify-navbar-brand-light {
+  color: black !important;
+  transition: .2s ease-in-out;
+}
+
+.chatify-navbar-brand-dark {
+  color: white !important;
+  transition: .2s ease-in-out;
+}
+
+.chatify-darknav {
+  background-color: #2F3B4D !important;
+  transition: .2s ease-in-out;
+}
+
+.chatify-darkinput {
+  background-color: #3E4B60 !important;
+  border-color: #3E4D63 !important;
+  color: white !important;
+  transition: .2s ease-in-out;
+}
+
+.chatify-lightinput {
+  background-color: #ffffff !important;
+  transition: .2s ease-in-out;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  transition: .2s ease-in-out;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  transition: .2s ease-in-out;
+}
+
+.ChatMsg {
+  display: flex; gap: 8px;
+  overflow: scroll;
+}
+

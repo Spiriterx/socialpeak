@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class='h-100'>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='icon' href='favicon.ico'>
+
+  <!-- Bootstrap CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/7163eb833f.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href='style.css' rel='stylesheet'>
+
+  <style>
+    .code {
+      background-color: #333333;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: Fira Code, monospace;
+      width: 35%;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+
+      var colourMode = getCookie('colourMode');
+      if (colourMode != '') {
+        document.getElementById('checkBox-CM').checked = false;
+        setCookie('colourMode', 'light');
+      }
+
+      if (colourMode == 'light') {
+        document.getElementById('checkBox-CM').checked = false;
+      }
+
+      if (colourMode == 'dark') {
+        document.getElementById('checkBox-CM').checked = true;
+        darkModeToggle()
+      }
+
+      $("#modal").modal('show');
+    });
+
+  </script>
+
+  <title>Social Peak</title>
+
+</head>
+
+<body id='error' class='d-flex flex-column h-100'>
+
+  <div id="LoadingScreenDiv">
+    <h1>Loading</h1>
+  </div>
+  <div id="MainBodyDiv">
+    <div class="modal fade in" id="helpInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">Slash Commands</h5>
+          </div>
+          <div class="modal-body">
+            <div class='code'>
+              <p>/img (url) - <i> Send an image</i></p>
+              <p>/me (message) - <i> Send an italics message</i></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <nav class="navbar chatify-lightnav" id='chatify-navbar'>
+      <div class="container-fluid">
+        <a class="navbar-brand chatify-navbar-brand-light" href="/" id='navLogo'>Social Peak</a>
+        <label class="switch">
+          <input type="checkbox" onclick="darkModeToggle()" id='checkBox-CM' checked>
+          <span class="slider round"></span>
+        </label>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#helpInfo"><i
+            class="fas fa-question"></i></button>
+      </div>
+    </nav>
+
+    <div class="alert alert-danger slide-in-up" role="alert"
+      style='margin-left: 3%; margin-right: 3%; margin-top: 10px; display: none;' id='alertBox'> Alert </div>
+
+    <br>
+
+    <div id='chat' style='padding-left: 20px; max-height: 83%; overflow-y: scroll;'></div>
+
+    <footer class="footer mt-auto py-3 bg-light" id='footer'>
+      <div class="container">
+        <div class='c-flexcontainer'>
+          <input class="form-control mr-10" type="text" name='message' placeholder="Start typing..."
+            aria-label="default input example" id='message' autocomplete="off">
+          <button class="btn btn-primary awidth" id='send' name='submit' aria-label="default input example"><i
+              class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+      <audio id='audio' src="https://freesound.org/data/previews/235/235911_2391840-lq.ogg" autoplay="true"></audio>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <script>
+    function setCookie(cname, cvalue) {
+      document.cookie = cname + "=" + cvalue + ";"
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+  </script>
+  <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+  <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script>
+	var beamer_config = {
+		product_id : "exsEtBpS54223" //DO NOT CHANGE: This is your product code on Beamer
+	};
+</script>
+<script type="text/javascript" src="https://app.getbeamer.com/js/beamer-embed.js" defer="defer"></script>
+  <script src='./utils.js'></script>
+  <script src='./index.js'></script>
+</body>
+
+</html>
